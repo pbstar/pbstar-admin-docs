@@ -7,20 +7,21 @@ hero:
   tagline: Pbstar-admin 是一套全面便捷的后台管理系统解决方案，基于 wujie、rsbuild、pnpm 完成微前端架构，运用 vue3、pinia、element plus 等主流技术栈。
   image:
     src: /logo-big.png
-    alt: VitePress
+    alt: PbstarAdmin
   actions:
-    - theme: alt
-      text: Github
-      link: https://github.com/pbstar/pbstar-admin
     - theme: brand
-      text: 快速开始
+      text: 什么是 PbstarAdmin ?
       link: /intro/what
-
+    - theme: alt
+      text: 快速开始
+      link: /intro/start
 features:
   - title: 微前端架构
-    details: 基于 wujie、rsbuild、pnpm 完成微前端架构。
+    details: 基于 wujie、rsbuild、pnpm 完成微前端架构，支持模块独立开发部署。
   - title: 主流技术栈
-    details: 运用 vue3、pinia、element plus 等主流技术栈。
+    details: 运用 vue3、pinia、element plus 等主流技术栈，提供最佳开发体验。
+  - title: 基础组件库
+    details: 提供表格、弹窗、查询、折叠、字段等基础组件，使开发更便捷更统一。
   - title: 代码生成器
-    details: 基于代码生成器，快速生成主子表列表查询弹框等代码。
+    details: 基于模板引擎生成代码，一键完成 CRUD 操作，告别繁琐的重复劳动。
 ---
