@@ -4,7 +4,10 @@ export default defineConfig({
   title: "PbstarAdmin",
   description:
     "Pbstar-admin 是一套全面便捷的后台管理系统解决方案，基于 micro-app、pnpm 完成微前端架构，运用 vue3、vite、pinia、element plus 等主流技术栈。",
+  head: [["link", { rel: "icon", type: "image/png", href: "/pbstar-admin/logo.png" }]],
+  base: "/pbstar-admin/",
   themeConfig: {
+    logo: "/logo.png",
     nav: [
       { text: "首页", link: "/" },
       { text: "文档", link: "/intro/what" },
