@@ -17,6 +17,15 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "文档", link: "/docs/what" },
       { text: "在线演示", link: "" },
+      {
+        text: "1.0.0-beta.1",
+        items: [
+          {
+            text: "更新日志",
+            link: "https://github.com/pbstar/pbstar-admin/blob/main/CHANGELOG.md",
+          },
+        ],
+      },
     ],
     sidebar: [
       {
@@ -44,7 +53,6 @@ export default defineConfig({
       {
         text: "其他",
         items: [
-          { text: "更新日志", link: "/docs/changelog" },
           { text: "常见问题", link: "/docs/faq" },
           { text: "参与贡献", link: "/docs/contribute" },
           { text: "赞助", link: "/docs/sponsor" },
