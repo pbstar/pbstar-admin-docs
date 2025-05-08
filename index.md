@@ -11,10 +11,13 @@ hero:
   actions:
     - theme: brand
       text: 什么是 PbstarAdmin ?
-      link: /intro/what
+      link: /docs/what
     - theme: alt
       text: 快速开始
-      link: /intro/start
+      link: /docs/start
+    - theme: alt
+      text: 在线演示
+      link:
 features:
   - title: 微前端架构
     details: 基于 wujie、rsbuild、pnpm 完成微前端架构，支持模块独立开发部署。
