@@ -68,6 +68,22 @@
 | tipText     | 提示文字 | String  | -      | "用户名请输入真实姓名" |
 | rightText   | 右侧文字 | String  | -      | "元"                   |
 
+type 支持的输入类型：
+
+- slot：插槽
+- input：文本输入框
+- textarea：多行文本输入框
+- inputNumber：数字输入框
+- select：下拉选择框
+- selectMultiple：多选下拉选择框
+- radio：单选框
+- checkbox：多选框
+- date：日期选择器
+- daterange：日期范围选择器
+- time：时间选择器
+- datetime：日期时间选择器
+- datetimerange：日期时间范围选择器
+
 ### Events
 
 | 事件名 | 说明       | 回调参数                |
@@ -169,8 +185,8 @@
 
 | 事件名           | 说明               | 回调参数                                       |
 | ---------------- | ------------------ | ---------------------------------------------- |
-| topBtnClick      | 顶部按钮点击事件   | '{ key: 按钮 key,selectionList?: 选中行数据 }' |
-| rightBtnClick    | 操作列按钮点击事件 | '{ row: 行数据, btn: 按钮 key }'               |
+| topBtnClick      | 顶部按钮点击事件   | '{ btn: 按钮 key,selectionList?: 选中行数据 }' |
+| rightBtnClick    | 操作列按钮点击事件 | '{ btn: 按钮 key,row: 行数据 }'                |
 | paginationChange | 分页变化事件       | '{ pageNumber, pageSize }'                     |
 
 ### Slots
@@ -215,7 +231,7 @@
 
 | 事件名      | 说明             | 回调参数             |
 | ----------- | ---------------- | -------------------- |
-| botBtnClick | 底部按钮点击事件 | ' { key: 按钮 key }' |
+| botBtnClick | 底部按钮点击事件 | ' { btn: 按钮 key }' |
 
 ### Slots
 
