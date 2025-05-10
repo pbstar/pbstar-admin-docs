@@ -18,7 +18,7 @@ export default defineConfig({
       { text: "文档", link: "/docs/what" },
       { text: "在线演示", link: "" },
       {
-        text: "1.0.0-beta.1",
+        text: "1.0.0-beta.1（待发布）",
         items: [
           {
             text: "更新日志",
@@ -55,7 +55,7 @@ export default defineConfig({
         items: [
           { text: "常见问题", link: "/docs/faq" },
           { text: "参与贡献", link: "/docs/contribute" },
-          { text: "赞助", link: "/docs/sponsor" },
+          { text: "赞助支持", link: "/docs/sponsor" },
         ],
       },
     ],
