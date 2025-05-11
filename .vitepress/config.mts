@@ -48,7 +48,10 @@ export default defineConfig({
       },
       {
         text: "进阶",
-        items: [{ text: "Server 服务端", link: "/docs/server" }],
+        items: [
+          { text: "Generator 代码生成器", link: "/docs/generator" },
+          { text: "Server 服务端", link: "/docs/server" },
+        ],
       },
       {
         text: "其他",
