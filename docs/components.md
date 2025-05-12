@@ -64,7 +64,7 @@
 | isText      | 文本展示 | Boolean | false  | false                  |
 | isRequired  | 必填标识 | Boolean | false  | false                  |
 | isDisabled  | 禁用标识 | Boolean | false  | false                  |
-| enumType    | 枚举类型 | String  | -      | "gender"               |
+| enumKey     | 枚举类型 | String  | -      | "gender"               |
 | tipText     | 提示文字 | String  | -      | "用户名请输入真实姓名" |
 | rightText   | 右侧文字 | String  | -      | "元"                   |
 
@@ -154,7 +154,7 @@ type 支持的输入类型：
 | label    | 列标题           | String | -      | "姓名"   |
 | width    | 列宽度           | String | -      | "100px"  |
 | minWidth | 列最小宽度       | String | -      | "50px"   |
-| enumType | 枚举类型         | String | -      | "gender" |
+| enumKey  | 枚举类型         | String | -      | "gender" |
 | options  | 选项列表         | Array  | []     | []       |
 | slot     | 自定义列的插槽名 | String | -      | "name"   |
 
