@@ -132,29 +132,31 @@ type 支持的输入类型：
 
 ### Props
 
-| 参数          | 说明         | 类型          | 默认值 | 示例          |
-| ------------- | ------------ | ------------- | ------ | ------------- |
-| data          | 表格数据     | Array         | []     | []            |
-| column        | 列配置       | Array         | []     | []:Column     |
-| tableKey      | 表格唯一键   | String        | ""     | "orderTable"  |
-| showSelection | 显示多选框   | Boolean       | false  | false         |
-| showIndex     | 显示序号列   | Boolean       | true   | true          |
-| showSetting   | 显示设置列   | Boolean       | false  | false         |
-| maxHeight     | 表格最大高度 | Number/String | 800    | 800           |
-| pagination    | 分页配置     | Object        | {}     | {}:Pagination |
-| topBtn        | 顶部按钮配置 | Array         | []     | []:TopBtn     |
-| rightBtn      | 操作列配置   | Array         | []     | []:RightBtn   |
+| 参数          | 说明         | 类型          | 默认值 | 示例                                                       |
+| ------------- | ------------ | ------------- | ------ | ---------------------------------------------------------- |
+| data          | 表格数据     | Array         | []     | []                                                         |
+| column        | 列配置       | Array         | []     | []:Column                                                  |
+| tableKey      | 表格唯一键   | String        | ""     | "orderTable"                                               |
+| showSelection | 显示多选框   | Boolean       | false  | false                                                      |
+| showIndex     | 显示序号列   | Boolean       | true   | true                                                       |
+| showSetting   | 显示设置列   | Boolean       | false  | false                                                      |
+| maxHeight     | 表格最大高度 | Number/String | 800    | 800                                                        |
+| pagination    | 分页配置     | Object        | {}     | {}:Pagination                                              |
+| topBtn        | 顶部按钮配置 | Array         | []     | []:TopBtn                                                  |
+| rightBtn      | 操作列配置   | Array         | []     | []:RightBtn                                                |
+| export        | 导出方法     | Function/null | null   | (callBack) => {callBack({ fileName: "用户列表",data: []})} |
 
 #### Column 列配置
 
-| 参数     | 说明       | 类型   | 默认值 | 示例     |
-| -------- | ---------- | ------ | ------ | -------- |
-| key      | 字段名     | String | -      | "name"   |
-| label    | 列标题     | String | -      | "姓名"   |
-| width    | 列宽度     | String | -      | "100px"  |
-| minWidth | 列最小宽度 | String | -      | "50px"   |
-| enumType | 枚举类型   | String | -      | "gender" |
-| options  | 选项列表   | Array  | []     | []       |
+| 参数     | 说明             | 类型   | 默认值 | 示例     |
+| -------- | ---------------- | ------ | ------ | -------- |
+| key      | 字段名           | String | -      | "name"   |
+| label    | 列标题           | String | -      | "姓名"   |
+| width    | 列宽度           | String | -      | "100px"  |
+| minWidth | 列最小宽度       | String | -      | "50px"   |
+| enumType | 枚举类型         | String | -      | "gender" |
+| options  | 选项列表         | Array  | []     | []       |
+| slot     | 自定义列的插槽名 | String | -      | "name"   |
 
 #### Pagination 分页配置
 
@@ -191,10 +193,11 @@ type 支持的输入类型：
 
 ### Slots
 
-| 名称     | 说明           |
-| -------- | -------------- |
-| topRight | 表格右上角区域 |
-| botLeft  | 表格左下角区域 |
+| 名称     | 说明           | 回调参数  |
+| -------- | -------------- | --------- |
+| topRight | 表格右上角区域 | -         |
+| botLeft  | 表格左下角区域 | -         |
+| {key}    | 自定义列       | '{ row }' |
 
 ### 使用示例
 
