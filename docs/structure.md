@@ -1,11 +1,12 @@
 # 目录结构
 
+目录结构如下：
+
 ```
 ├── apps                   # 子应用
 │ ├── system               # 系统管理
 │ └── example              # 示例应用
 ├── assets                 # 静态资源
-├── build                  # 打包
 ├── cli                    # 脚手架
 ├── components             # 组件
 ├── main                   # 主应用

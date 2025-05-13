@@ -7,10 +7,9 @@ export default defineConfig({
   head: [
     [
       "link",
-      { rel: "icon", type: "image/png", href: "/pbstar-admin/logo.png" },
+      { rel: "icon", type: "image/png", href: "/logo.png" },
     ],
   ],
-  base: "/pbstar-admin/",
   themeConfig: {
     logo: "/logo.png",
     nav: [
