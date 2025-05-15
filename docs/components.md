@@ -53,20 +53,21 @@
 
 #### Config 配置项
 
-| 参数        | 说明     | 类型    | 默认值 | 示例                   |
-| ----------- | -------- | ------- | ------ | ---------------------- |
-| key         | 字段名   | String  | -      | "name"                 |
-| label       | 标签文本 | String  | -      | "用户名"               |
-| labelStyle  | 标签样式 | Object  | -      | {}                     |
-| type        | 输入类型 | String  | -      | "input"                |
-| options     | 选项列表 | Array   | []     | []                     |
-| placeholder | 提示文字 | String  | -      | "请输入"               |
-| isText      | 文本展示 | Boolean | false  | false                  |
-| isRequired  | 必填标识 | Boolean | false  | false                  |
-| isDisabled  | 禁用标识 | Boolean | false  | false                  |
-| enumKey     | 枚举类型 | String  | -      | "gender"               |
-| tipText     | 提示文字 | String  | -      | "用户名请输入真实姓名" |
-| rightText   | 右侧文字 | String  | -      | "元"                   |
+| 参数        | 说明           | 类型    | 默认值 | 示例                   |
+| ----------- | -------------- | ------- | ------ | ---------------------- |
+| key         | 字段名         | String  | -      | "name"                 |
+| label       | 标签文本       | String  | -      | "用户名"               |
+| labelStyle  | 标签样式       | Object  | -      | {}                     |
+| type        | 输入类型       | String  | -      | "input"                |
+| options     | 选项列表       | Array   | []     | []                     |
+| placeholder | 提示文字       | String  | -      | "请输入"               |
+| isText      | 文本展示       | Boolean | false  | false                  |
+| isRequired  | 必填标识       | Boolean | false  | false                  |
+| isDisabled  | 禁用标识       | Boolean | false  | false                  |
+| enumKey     | 枚举类型       | String  | -      | "gender"               |
+| tipText     | 提示文字       | String  | -      | "用户名请输入真实姓名" |
+| rightText   | 右侧文字       | String  | -      | "元"                   |
+| more        | 动态绑定的属性 | Object  | {}     | {}                     |
 
 type 支持的输入类型：
 
