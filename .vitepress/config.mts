@@ -56,6 +56,7 @@ export default defineConfig({
         text: "其他",
         items: [
           { text: "常见问题", link: "/docs/faq" },
+          { text: "开发计划", link: "/docs/plan" },
           { text: "参与贡献", link: "/docs/contribute" },
           { text: "赞助支持", link: "/docs/sponsor" },
         ],
