@@ -1,11 +1,9 @@
 # Server 服务端
 
 ::: warning
-Server 服务端未接入数据库，仅作为示例和测试使用。
-正式部署本项目时请由后端同学完成本部分内容。
-官方计划在半年内采用 nodejs+mysql 技术完成正式的 Server 服务端。
-同时，欢迎 java 同学开发 java 版的 Server 服务端，非常感谢。
-
+Server 服务端未接入数据库，仅作为示例和测试使用，正式部署本项目时请由后端同学完成本部分内容。
+官方计划后续采用 nodejs+mysql 技术完成正式的 Server 服务端。
+同时，欢迎 java 同学贡献 pbstar-admin-java 项目，从而实现完整版的 pbstar-admin 项目。
 :::
 
 ## 目录结构

@@ -50,6 +50,7 @@ export default defineConfig({
         items: [
           { text: "Generator 代码生成器", link: "/docs/generator" },
           { text: "Server 服务端", link: "/docs/server" },
+          { text: "Deploy 部署", link: "/docs/deploy" },
         ],
       },
       {
