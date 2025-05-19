@@ -17,7 +17,7 @@ hero:
       link: /docs/start
     - theme: alt
       text: 在线演示
-      link:
+      link: http://pbstar-admin.pbstar.cn/
 features:
   - title: 微前端架构
     details: 基于 wujie、rsbuild、pnpm 完成微前端架构，支持模块独立开发部署。
