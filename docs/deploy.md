@@ -12,7 +12,7 @@
 ```nginx
 server {
     listen 8800;
-    server_name pbstar-admin.cn;
+    server_name pbstar-admin.pbstar.cn;
     location / {
         root   /www/wwwroot/pbstar-admin;
         index  index.html index.htm;
@@ -22,9 +22,9 @@ server {
     }
 
     #接口代理
-    location /api_base/ {
-        proxy_pass http://152.136.96.92:8900/;
-        proxy_set_header Host $host;
+    location ^~ /api_base/  {
+        proxy_pass http://pbstar-admin-server.pbstar.cn/;
+        proxy_set_header Host pbstar-admin-server.pbstar.cn;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
@@ -45,7 +45,7 @@ server {
         try_files $uri $uri/ /index.html;
 
         # 允许来自主应用的跨域请求
-        add_header 'Access-Control-Allow-Origin' 'http://152.136.96.92:8800';
+        add_header 'Access-Control-Allow-Origin' 'http://pbstar-admin.pbstar.cn/';
         add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS';
         add_header 'Access-Control-Allow-Headers' '*';
 
@@ -57,13 +57,13 @@ server {
 
     #接口代理
     location /api_base/ {
-        proxy_pass http://152.136.96.92:8900/;
-        proxy_set_header Host $host;
+        proxy_pass http://pbstar-admin-server.pbstar.cn/;
+        proxy_set_header Host pbstar-admin-server.pbstar.cn;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
         # 允许来自主应用的跨域请求
-        add_header 'Access-Control-Allow-Origin' 'http://152.136.96.92:8800';
+        add_header 'Access-Control-Allow-Origin' 'http://pbstar-admin.pbstar.cn/';
         add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS';
         add_header 'Access-Control-Allow-Headers' '*';
 
