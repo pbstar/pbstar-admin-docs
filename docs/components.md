@@ -2,6 +2,7 @@
 
 - [p-title](#p-title-标题组件)
 - [p-item](#p-item-基础项组件)
+- [p-form](#p-form-表单组件)
 - [p-searh](#p-searh-搜索组件)
 - [p-table](#p-table-表格组件)
 - [p-dialog](#p-dialog-对话框组件)
@@ -98,11 +99,51 @@ type 支持的输入类型：
 <p-item v-model="form.name" :config="{ type: 'input', label: '用户名' }" />
 ```
 
+## p-form 表单组件
+
+### 功能说明
+
+表单组件，支持动态表单配置
+
+### Props
+
+| 参数     | 说明                      | 类型  | 默认值     | 示例            |
+| -------- | ------------------------- | ----- | ---------- | --------------- |
+| data     | 表单项配置                | Array | []         | []:PItem.Config |
+| spanList | 栅格配置（占满整行为 12） | Array | [6,6,6...] | []:Number       |
+
+### Events
+
+| 事件名 | 说明       | 回调参数                |
+| ------ | ---------- | ----------------------- |
+| change | 值变化事件 | '{ key?, value, row? }' |
+
+### Slots
+
+| 名称  | 说明                                           |
+| ----- | ---------------------------------------------- |
+| {key} | 自定义搜索项（需要 PItem.Config.type 为 slot） |
+
+### Exposes
+
+| 方法名        | 说明                 | 参数                          | 返回值                 |
+| ------------- | -------------------- | ----------------------------- | ---------------------- |
+| toChangeData  | 修改 data 配置项数据 | []:PItem.Config               | -                      |
+| toChangeValue | 修改 表单值          | '{ key1:value1,key2:value2 }' | -                      |
+| getFormValue  | 获取 表单值          | -                             | {errList,errMsg,value} |
+
+### 使用示例
+
+```vue
+<!-- import pForm from "@Pcomponents/base/p-form/index.vue"; -->
+<p-form :data="formItems" :spanList="spanList" />
+```
+
 ## p-search 搜索组件
 
 ### 功能说明
 
-组合式搜索表单组件，支持动态表单配置
+搜索表单组件，支持动态表单配置
 
 ### Props
 
@@ -117,6 +158,19 @@ type 支持的输入类型：
 | -------- | ------------ | ----------------------- |
 | change   | 值变化事件   | '{ key?, value, row? }' |
 | btnClick | 按钮点击事件 | '{ type,data }'         |
+
+### Slots
+
+| 名称  | 说明                                           |
+| ----- | ---------------------------------------------- |
+| {key} | 自定义搜索项（需要 PItem.Config.type 为 slot） |
+
+### Exposes
+
+| 方法名        | 说明                 | 参数                          | 返回值 |
+| ------------- | -------------------- | ----------------------------- | ------ |
+| toChangeData  | 修改 data 配置项数据 | []:PItem.Config               | -      |
+| toChangeValue | 修改 搜索项的值      | '{ key1:value1,key2:value2 }' | -      |
 
 ### 使用示例
 
@@ -199,6 +253,12 @@ type 支持的输入类型：
 | topRight | 表格右上角区域 | -         |
 | botLeft  | 表格左下角区域 | -         |
 | {key}    | 自定义列       | '{ row }' |
+
+### Exposes
+
+| 方法名         | 说明                   | 参数      | 返回值 |
+| -------------- | ---------------------- | --------- | ------ |
+| toChangeColumn | 修改 column 配置项数据 | []:Column | -      |
 
 ### 使用示例
 
