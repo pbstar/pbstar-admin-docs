@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "PbstarAdmin",
   description:
-    "Pbstar-admin 是一套全面便捷的后台管理系统解决方案，基于 micro-app、pnpm 完成微前端架构，运用 vue3、vite、pinia、element plus 等主流技术栈。",
+    "Pbstar-admin 是一套全面便捷的后台管理系统解决方案，基于 wujie、rsbuild、pnpm 完成微前端架构，运用 vue3、pinia、element plus 等主流技术栈。",
   head: [["link", { rel: "icon", type: "image/png", href: "/logo.png" }]],
   themeConfig: {
     logo: "/logo.png",
@@ -12,7 +12,7 @@ export default defineConfig({
       { text: "文档", link: "/docs/what" },
       { text: "在线演示", link: "http://pbstar-admin.pbstar.cn/" },
       {
-        text: "V0.0.1",
+        text: "V0.0.2",
         items: [
           {
             text: "更新日志",
