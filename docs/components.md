@@ -54,21 +54,21 @@
 
 #### Config 配置项
 
-| 参数        | 说明           | 类型    | 默认值 | 示例                   |
-| ----------- | -------------- | ------- | ------ | ---------------------- |
-| key         | 字段名         | String  | -      | "name"                 |
-| label       | 标签文本       | String  | -      | "用户名"               |
-| labelStyle  | 标签样式       | Object  | -      | {}                     |
-| type        | 输入类型       | String  | -      | "input"                |
-| options     | 选项列表       | Array   | []     | []                     |
-| placeholder | 提示文字       | String  | -      | "请输入"               |
-| isText      | 文本展示       | Boolean | false  | false                  |
-| isRequired  | 必填标识       | Boolean | false  | false                  |
-| isDisabled  | 禁用标识       | Boolean | false  | false                  |
-| enumKey     | 枚举类型       | String  | -      | "gender"               |
-| tipText     | 提示文字       | String  | -      | "用户名请输入真实姓名" |
-| rightText   | 右侧文字       | String  | -      | "元"                   |
-| more        | 动态绑定的属性 | Object  | {}     | {}                     |
+| 参数        | 说明           | 类型    | 默认值 | 示例                     |
+| ----------- | -------------- | ------- | ------ | ------------------------ |
+| key         | 字段名         | String  | -      | "name"                   |
+| label       | 标签文本       | String  | -      | "用户名"                 |
+| labelStyle  | 标签样式       | Object  | -      | {}                       |
+| type        | 输入类型       | String  | -      | "input"                  |
+| options     | 选项列表       | Array   | []     | [{label:'男',value:'1'}] |
+| placeholder | 提示文字       | String  | -      | "请输入"                 |
+| isText      | 文本展示       | Boolean | false  | false                    |
+| isRequired  | 必填标识       | Boolean | false  | false                    |
+| isDisabled  | 禁用标识       | Boolean | false  | false                    |
+| enumKey     | 枚举类型       | String  | -      | "gender"                 |
+| tipText     | 提示文字       | String  | -      | "用户名请输入真实姓名"   |
+| rightText   | 右侧文字       | String  | -      | "元"                     |
+| more        | 动态绑定的属性 | Object  | {}     | {}                       |
 
 type 支持的输入类型：
 
@@ -187,31 +187,31 @@ type 支持的输入类型：
 
 ### Props
 
-| 参数          | 说明         | 类型          | 默认值 | 示例                                                       |
-| ------------- | ------------ | ------------- | ------ | ---------------------------------------------------------- |
-| data          | 表格数据     | Array         | []     | []                                                         |
-| column        | 列配置       | Array         | []     | []:Column                                                  |
-| tableKey      | 表格唯一键   | String        | ""     | "orderTable"                                               |
-| showSelection | 显示多选框   | Boolean       | false  | false                                                      |
-| showIndex     | 显示序号列   | Boolean       | true   | true                                                       |
-| showSetting   | 显示设置列   | Boolean       | false  | false                                                      |
-| maxHeight     | 表格最大高度 | Number/String | 800    | 800                                                        |
-| pagination    | 分页配置     | Object        | {}     | {}:Pagination                                              |
-| topBtn        | 顶部按钮配置 | Array         | []     | []:TopBtn                                                  |
-| rightBtn      | 操作列配置   | Array         | []     | []:RightBtn                                                |
-| export        | 导出方法     | Function/null | null   | (callBack) => {callBack({ fileName: "用户列表",data: []})} |
+| 参数          | 说明         | 类型          | 默认值 | 示例          |
+| ------------- | ------------ | ------------- | ------ | ------------- |
+| data          | 表格数据     | Array         | []     | []            |
+| column        | 列配置       | Array         | []     | []:Column     |
+| tableKey      | 表格唯一键   | String        | ""     | "orderTable"  |
+| showSelection | 显示多选框   | Boolean       | false  | false         |
+| showIndex     | 显示序号列   | Boolean       | true   | true          |
+| showSetting   | 显示设置列   | Boolean       | false  | false         |
+| maxHeight     | 表格最大高度 | Number/String | 800    | 800           |
+| pagination    | 分页配置     | Object        | {}     | {}:Pagination |
+| topBtn        | 顶部按钮配置 | Array         | []     | []:TopBtn     |
+| rightBtn      | 操作列配置   | Array         | []     | []:RightBtn   |
+| export        | 导出方法     | Function/null | null   | Fun:Export    |
 
 #### Column 列配置
 
-| 参数     | 说明             | 类型   | 默认值 | 示例     |
-| -------- | ---------------- | ------ | ------ | -------- |
-| key      | 字段名           | String | -      | "name"   |
-| label    | 列标题           | String | -      | "姓名"   |
-| width    | 列宽度           | String | -      | "100px"  |
-| minWidth | 列最小宽度       | String | -      | "50px"   |
-| enumKey  | 枚举类型         | String | -      | "gender" |
-| options  | 选项列表         | Array  | []     | []       |
-| slot     | 自定义列的插槽名 | String | -      | "name"   |
+| 参数     | 说明             | 类型   | 默认值 | 示例                     |
+| -------- | ---------------- | ------ | ------ | ------------------------ |
+| key      | 字段名           | String | -      | "name"                   |
+| label    | 列标题           | String | -      | "姓名"                   |
+| width    | 列宽度           | String | -      | "100px"                  |
+| minWidth | 列最小宽度       | String | -      | "50px"                   |
+| enumKey  | 枚举类型         | String | -      | "gender"                 |
+| options  | 选项列表         | Array  | []     | [{label:'男',value:'1'}] |
+| slot     | 自定义列的插槽名 | String | -      | "name"                   |
 
 #### Pagination 分页配置
 
@@ -223,11 +223,12 @@ type 支持的输入类型：
 
 #### TopBtn 顶部按钮配置
 
-| 参数  | 说明     | 类型   | 默认值 | 示例      |
-| ----- | -------- | ------ | ------ | --------- |
-| key   | 按钮 key | String | -      | "add"     |
-| label | 按钮文本 | String | -      | "新增"    |
-| type  | 按钮类型 | String | -      | "primary" |
+| 参数  | 说明     | 类型   | 默认值 | 示例       |
+| ----- | -------- | ------ | ------ | ---------- |
+| key   | 按钮 key | String | -      | "add"      |
+| label | 按钮文本 | String | -      | "新增"     |
+| type  | 按钮类型 | String | -      | "primary"  |
+| auth  | 权限校验 | String | -      | "list_add" |
 
 #### RightBtn 操作列配置
 
@@ -236,7 +237,16 @@ type 支持的输入类型：
 | key   | 按钮 key | String           | -      | "edit"                     |
 | label | 按钮文本 | String           | -      | "编辑"                     |
 | type  | 按钮类型 | String           | -      | "primary"                  |
+| auth  | 权限校验 | String           | -      | "list_edit"                |
 | show  | 显示条件 | Boolean/Function | -      | (row) => row.status == '1' |
+
+#### Export 导出方法配置
+
+```javascript
+(callBack) => {
+  callBack({ fileName: "用户列表", data: [] });
+};
+```
 
 ### Events
 

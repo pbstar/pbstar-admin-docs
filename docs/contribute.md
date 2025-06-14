@@ -17,7 +17,6 @@
 ## 代码提交规范
 
 - 代码格式使用 Prettier 进行统一
-- 提交信息遵循 Conventional Commits 规范
 - 关联相关 issue（如有）
 
 ## Pull Request 流程

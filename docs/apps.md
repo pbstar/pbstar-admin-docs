@@ -21,6 +21,9 @@ pbstar-admin 子应用是基于 Vue 3 + Element Plus 的后台管理系统模块
 - 功能模块：
   - 列表示例
   - ECharts 示例
+  - Markdown 编辑器
+  - 富文本编辑器
+  - 大屏可视化示例
 
 ## 集成方式
 
