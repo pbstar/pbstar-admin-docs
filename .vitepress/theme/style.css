@@ -6,3 +6,7 @@
   );
   --vp-home-hero-image-filter: blur(50px);
 }
+.vp-doc p,
+.vp-doc summary {
+  margin: 10px 0 0;
+}
