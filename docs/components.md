@@ -1,6 +1,7 @@
 # Components 组件库
 
 - [p-title](#p-title-标题组件)
+- [p-icon](#p-icon-图标组件)
 - [p-item](#p-item-基础项组件)
 - [p-form](#p-form-表单组件)
 - [p-searh](#p-searh-搜索组件)
@@ -37,6 +38,27 @@
 ```vue
 <!-- import pTitle from "@Pcomponents/base/p-title/index.vue"; -->
 <p-title :list="['订单', '物流']" @change="handleTitleChange" />
+```
+
+## p-icon 图标组件
+
+### 功能说明
+
+图标组件，支持 Element plus 图标和 iconfont 图标
+
+### Props
+
+| 参数  | 说明     | 类型          | 默认值          | 示例           |
+| ----- | -------- | ------------- | --------------- | -------------- |
+| name  | 图标名称 | String        | el-icon-loading | 'el-icon-edit' |
+| size  | 图标大小 | String/Number | 16              | 24             |
+| color | 图标颜色 | String        | #000            | '#ff0000'      |
+
+### 使用示例
+
+```vue
+<!-- import pIcon from "@Pcomponents/base/p-icon/index.vue"; -->
+<p-icon name="el-icon-edit" size="24" color="#ff0000" />
 ```
 
 ## p-item 基础项组件
