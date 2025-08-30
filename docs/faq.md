@@ -29,3 +29,7 @@
 若不想看到该警告，可以升级 Node.js 版本至 20+，或关闭该警告：`node --no-warnings`
 
 ## 部署问题
+
+## 其他问题
+
+[github 问题反馈](https://github.com/pbstar/pbstar-admin/issues)

@@ -22,7 +22,7 @@ server {
     }
 
     #接口代理
-    location ^~ /api_base/  {
+    location ^~ /api/  {
         proxy_pass http://pbstar-admin-server.pbstar.cn/;
         proxy_set_header Host pbstar-admin-server.pbstar.cn;
         proxy_set_header X-Real-IP $remote_addr;
@@ -56,7 +56,7 @@ server {
     }
 
     #接口代理
-    location /api_base/ {
+    location /api/ {
         proxy_pass http://pbstar-admin-server.pbstar.cn/;
         proxy_set_header Host pbstar-admin-server.pbstar.cn;
         proxy_set_header X-Real-IP $remote_addr;

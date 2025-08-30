@@ -6,7 +6,7 @@
 
 ## 环境要求
 
-- node >= 18.12.0
+- node >= 18.12.0（推荐使用 Node.js 22 LTS）
 - pnpm >= 9.15.0
 
 ## 快速开始
@@ -22,23 +22,12 @@ npm install -g pnpm
 pnpm install
 # 启动项目
 pnpm run dev
-```
-
-## 创建子应用
-
-```bash
+# 打包项目
+pnpm run build
+# 添加指定依赖包
+pnpm run add
+# 移除指定依赖包
+pnpm run remove
+# 创建子应用
 pnpm run create
-```
-
-## 安装删除指定依赖
-
-```bash
-# 安装依赖到主包
-pnpm add <依赖名> -w
-# 安装依赖到指定包
-pnpm add <依赖名> --filter <包名>
-# 删除主包的依赖
-pnpm remove <依赖名>
-# 删除指定包的依赖
-pnpm remove <依赖名> --filter <包名>
 ```

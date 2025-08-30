@@ -12,7 +12,7 @@ export default defineConfig({
       { text: "文档", link: "/docs/what" },
       { text: "在线演示", link: "http://pbstar-admin.pbstar.cn/" },
       {
-        text: "V0.1.1",
+        text: "V0.2.0",
         items: [
           {
             text: "更新日志",
@@ -26,14 +26,14 @@ export default defineConfig({
         text: "简介",
         items: [
           { text: "什么是 PbstarAdmin ?", link: "/docs/what" },
-          { text: "目录结构", link: "/docs/structure" },
+          { text: "项目结构", link: "/docs/structure" },
           { text: "快速开始", link: "/docs/start" },
         ],
       },
       {
         text: "指南",
         items: [
-          { text: "Cli 脚手架", link: "/docs/cli" },
+          { text: "Tools 工具", link: "/docs/tools" },
           { text: "Components 组件库", link: "/docs/components" },
           { text: "Assets 静态资源", link: "/docs/assets" },
           { text: "Main 主应用", link: "/docs/main" },

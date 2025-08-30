@@ -1,13 +1,19 @@
 # Components 组件库
 
-- [p-title](#p-title-标题组件)
-- [p-icon](#p-icon-图标组件)
-- [p-item](#p-item-基础项组件)
-- [p-form](#p-form-表单组件)
-- [p-searh](#p-searh-搜索组件)
-- [p-table](#p-table-表格组件)
-- [p-dialog](#p-dialog-对话框组件)
-- [p-collapse](#p-collapse-折叠组件)
+**Base 基础组件**
+
+- [p-title 标题组件](#p-title-标题组件)
+- [p-icon 图标组件](#p-icon-图标组件)
+- [p-item 基础项组件](#p-item-基础项组件)
+- [p-form 表单组件](#p-form-表单组件)
+- [p-searh 搜索组件](#p-searh-搜索组件)
+- [p-table 表格组件](#p-table-表格组件)
+- [p-dialog 对话框组件](#p-dialog-对话框组件)
+- [p-collapse 折叠组件](#p-collapse-折叠组件)
+
+**Layout 布局组件**
+
+- [p-twinBox 双栏布局组件](#p-twinBox-双栏布局组件)
 
 ## p-title 标题组件
 
@@ -371,4 +377,39 @@ type 支持的输入类型：
 <p-collapse title="详细信息">
   <p>这里是折叠内容</p>
 </p-collapse>
+```
+
+## p-twinBox 双栏布局组件
+
+### 功能说明
+
+双栏布局组件，用于将内容分为左右两栏，移动端自适应为上下两栏
+
+### Props
+
+| 参数 | 说明     | 类型          | 默认值 | 示例  |
+| ---- | -------- | ------------- | ------ | ----- |
+| size | 布局大小 | String/Number | "220"  | "220" |
+| min  | 最小宽度 | String/Number | "100"  | "100" |
+| max  | 最大宽度 | String/Number | "380"  | "380" |
+
+### Slots
+
+| 名称  | 说明     |
+| ----- | -------- |
+| plan1 | 左侧内容 |
+| plan2 | 右侧内容 |
+
+### 使用示例
+
+```vue
+<!-- import pTwinBox from "@Pcomponents/layout/p-twinBox/index.vue"; -->
+<p-twinBox>
+  <template #plan1>
+    <p>这里是左侧内容</p>
+  </template>
+  <template #plan2>
+    <p>这里是右侧内容</p>
+  </template>
+</p-twinBox>
 ```

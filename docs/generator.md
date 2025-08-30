@@ -25,7 +25,7 @@
 
 - 模板选择：main/childTable/formTable
 - 基础信息：key(主表 key)、title、childKey(子表 key)
-- API 配置：apiKey(前端用作代理的key)、apiBase(后端的api基础地址)
+- API 配置：apiBase(后端的 api 基础地址)
 - 字段管理：可添加、编辑、删除字段
 
 ## 后端实现
