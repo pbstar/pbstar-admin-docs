@@ -7,7 +7,7 @@ pbstar-admin 子应用是基于 **Vue 3 + Element Plus** 的后台管理系统�
 
 ## In 内部子应用
 
-内部子应用是指 pbstar-admin 主应用内部的子应用，它们的代码和资源都在 pbstar-admin 项目中，位于 `apps/` 目录下。
+内部子应用是指同 pbstar-admin 主应用共用一个 git 代码仓库的子应用，位于 `apps/` 目录下。
 
 ### system (系统应用)
 
@@ -31,7 +31,7 @@ pbstar-admin 子应用是基于 **Vue 3 + Element Plus** 的后台管理系统�
 
 ## Out 外部子应用
 
-外部子应用是指 pbstar-admin 主应用外部的子应用，它们的代码可以单独放在独立的 git 仓库，通过微前端架构集成。
+外部子应用是指单独放在独立的 git 仓库中的子应用，位于 `apps/` 目录下，需要配置 .gitmodules 文件。
 
 ### equipment (设备应用)
 
@@ -46,4 +46,4 @@ pbstar-admin 子应用是基于 **Vue 3 + Element Plus** 的后台管理系统�
 
 ## 外部子应用与内部子应用区别
 
-- 代码仓库：外部子应用有独立的代码仓库，内部子应用代码在主项目仓库的 `apps/` 目录下。
+- 代码仓库：外部子应用有独立的代码仓库，需要在主应用项目中配置 .gitmodules 文件。

@@ -25,7 +25,7 @@ pnpm run create
 
 创建完成后会自动：
 
-1. 在 `apps/` 或 `../pbstar-admin-apps` 目录下生成子应用文件夹
+1. 在 `apps/` 目录下生成子应用文件夹
 2. 更新 `apps/apps.json` 配置文件
 
 ### 注意事项
