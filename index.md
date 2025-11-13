@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: PbstarAdmin
-  tagline: Pbstar-admin 是一套全面便捷的后台管理系统解决方案，基于 wujie、rsbuild、pnpm 完成微前端架构，运用 vue3、pinia、element plus 等主流技术栈。
+  tagline: 基于 wujie 微前端 + rsbuild 高性能构建 + pnpm monorepo 的现代化架构，集成 Vue3 + Pinia + Element Plus 主流技术体系，提供从开发到部署的完整解决方案。
   image:
     src: /logo-big.png
     alt: PbstarAdmin
@@ -20,11 +20,15 @@ hero:
       link: http://pbstar-admin.pbstar.cn/
 features:
   - title: 微前端架构
-    details: 基于 wujie、rsbuild、pnpm 完成微前端架构，支持模块独立开发部署。
+    details: 基于腾讯wujie微前端框架，支持内外部子应用动态加载，实现真正的应用级微前端解耦
   - title: 主流技术栈
-    details: 运用 vue3、pinia、element plus 等主流技术栈，提供最佳开发体验。
-  - title: 基础组件库
-    details: 提供表格、弹窗、查询、折叠、字段等基础组件，使开发更便捷更统一。
-  - title: 代码生成器
-    details: 基于模板引擎生成代码，一键完成 CRUD 操作，告别繁琐的重复劳动。
+    details: 运用 vue3、pinia、element plus 等主流技术栈，提供最佳开发体验
+  - title: 智能模块化
+    details: pnpm monorepo工作区管理，支持内外部子应用（in/out类型），外部子应用可独立git仓库管理
+  - title: 企业级组件化
+    details: 共享组件库设计，@Pcomponents、@Passets统一别名引用，支持跨应用组件复用
+  - title: 全链路工程化
+    details: 完整的CLI工具链（create/dev/build/add/remove），自动化脚手架、依赖管理、打包部署
+  - title: 极致现代化
+    details: 基于Rsbuild高性能构建系统，多环境配置，支持子应用独立开发、调试、打包
 ---
