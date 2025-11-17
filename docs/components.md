@@ -15,6 +15,12 @@
 
 - [p-twinBox 双栏布局组件](#p-twinBox-双栏布局组件)
 
+**引入方式**
+
+```javascript
+import { PTitle, PIcon } from "@Pcomponents";
+```
+
 ## p-title 标题组件
 
 ### 功能说明
@@ -42,7 +48,6 @@
 ### 使用示例
 
 ```vue
-<!-- import pTitle from "@Pcomponents/base/p-title/index.vue"; -->
 <p-title :list="['订单', '物流']" @change="handleTitleChange" />
 ```
 
@@ -63,7 +68,6 @@
 ### 使用示例
 
 ```vue
-<!-- import pIcon from "@Pcomponents/base/p-icon/index.vue"; -->
 <p-icon name="el-icon-edit" size="24" color="#ff0000" />
 ```
 
@@ -123,7 +127,6 @@ type 支持的输入类型：
 ### 使用示例
 
 ```vue
-<!-- import pItem from "@Pcomponents/base/p-item/index.vue"; -->
 <p-item v-model="form.name" :config="{ type: 'input', label: '用户名' }" />
 ```
 
@@ -163,7 +166,6 @@ type 支持的输入类型：
 ### 使用示例
 
 ```vue
-<!-- import pForm from "@Pcomponents/base/p-form/index.vue"; -->
 <p-form :data="formItems" :spanList="spanList" />
 ```
 
@@ -203,7 +205,6 @@ type 支持的输入类型：
 ### 使用示例
 
 ```vue
-<!-- import pSearch from "@Pcomponents/base/p-search/index.vue"; -->
 <p-search :data="searchItems" @btnClick="handleSearch" />
 ```
 
@@ -301,7 +302,6 @@ type 支持的输入类型：
 ### 使用示例
 
 ```vue
-<!-- import pTable from "@Pcomponents/base/p-table/index.vue"; -->
 <p-table :data="tableData" :column="columns" />
 ```
 
@@ -345,7 +345,6 @@ type 支持的输入类型：
 ### 使用示例
 
 ```vue
-<!-- import pDialog from "@Pcomponents/base/p-dialog/index.vue"; -->
 <p-dialog type="drawer" title="编辑信息" v-model="showDialog"></p-dialog>
 ```
 
@@ -373,7 +372,6 @@ type 支持的输入类型：
 ### 使用示例
 
 ```vue
-<!-- import pCollapse from "@Pcomponents/base/p-collapse/index.vue"; -->
 <p-collapse title="详细信息">
   <p>这里是折叠内容</p>
 </p-collapse>
@@ -403,7 +401,6 @@ type 支持的输入类型：
 ### 使用示例
 
 ```vue
-<!-- import pTwinBox from "@Pcomponents/layout/p-twinBox/index.vue"; -->
 <p-twinBox>
   <template #plan1>
     <p>这里是左侧内容</p>
