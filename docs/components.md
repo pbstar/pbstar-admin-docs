@@ -226,8 +226,6 @@ type 支持的输入类型：
 | showSetting   | 显示设置列   | Boolean       | false  | false         |
 | maxHeight     | 表格最大高度 | Number/String | 800    | 800           |
 | pagination    | 分页配置     | Object        | {}     | {}:Pagination |
-| topBtn        | 顶部按钮配置 | Array         | []     | []:TopBtn     |
-| rightBtn      | 操作列配置   | Array         | []     | []:RightBtn   |
 | export        | 导出方法     | Function/null | null   | Fun:Export    |
 
 #### Column 列配置
@@ -250,25 +248,6 @@ type 支持的输入类型：
 | pageSize   | 每页条数 | Number | 10     | 10   |
 | total      | 总条数   | Number | 0      | 0    |
 
-#### TopBtn 顶部按钮配置
-
-| 参数  | 说明     | 类型   | 默认值 | 示例       |
-| ----- | -------- | ------ | ------ | ---------- |
-| key   | 按钮 key | String | -      | "add"      |
-| label | 按钮文本 | String | -      | "新增"     |
-| type  | 按钮类型 | String | -      | "primary"  |
-| auth  | 权限校验 | String | -      | "list_add" |
-
-#### RightBtn 操作列配置
-
-| 参数  | 说明     | 类型             | 默认值 | 示例                       |
-| ----- | -------- | ---------------- | ------ | -------------------------- |
-| key   | 按钮 key | String           | -      | "edit"                     |
-| label | 按钮文本 | String           | -      | "编辑"                     |
-| type  | 按钮类型 | String           | -      | "primary"                  |
-| auth  | 权限校验 | String           | -      | "list_edit"                |
-| show  | 显示条件 | Boolean/Function | -      | (row) => row.status == '1' |
-
 #### Export 导出方法配置
 
 ```javascript
@@ -279,19 +258,20 @@ type 支持的输入类型：
 
 ### Events
 
-| 事件名           | 说明               | 回调参数                                       |
-| ---------------- | ------------------ | ---------------------------------------------- |
-| topBtnClick      | 顶部按钮点击事件   | '{ btn: 按钮 key,selectionList?: 选中行数据 }' |
-| rightBtnClick    | 操作列按钮点击事件 | '{ btn: 按钮 key,row: 行数据 }'                |
-| paginationChange | 分页变化事件       | '{ pageNumber, pageSize }'                     |
+| 事件名           | 说明           | 回调参数                    |
+| ---------------- | -------------- | --------------------------- |
+| selectionChange  | 选择项变化事件 | 'selectionList: 选中行数据' |
+| paginationChange | 分页变化事件   | '{ pageNumber, pageSize }'  |
 
 ### Slots
 
-| 名称     | 说明           | 回调参数  |
-| -------- | -------------- | --------- |
-| topRight | 表格右上角区域 | -         |
-| botLeft  | 表格左下角区域 | -         |
-| {key}    | 自定义列       | '{ row }' |
+| 名称      | 说明           | 回调参数  |
+| --------- | -------------- | --------- |
+| topLeft   | 表格左上角区域 | -         |
+| topRight  | 表格右上角区域 | -         |
+| operation | 操作列         | '{ row }' |
+| botLeft   | 表格左下角区域 | -         |
+| {key}     | 自定义列       | '{ row }' |
 
 ### Exposes
 
@@ -313,27 +293,12 @@ type 支持的输入类型：
 
 ### Props
 
-| 参数       | 说明                             | 类型    | 默认值    |
-| ---------- | -------------------------------- | ------- | --------- |
-| type       | 类型：box/drawer/page            | String  | "box"     |
-| modelValue | 显示/隐藏状态                    | Boolean | false     |
-| title      | 对话框标题                       | String  | ""        |
-| width      | 宽度（支持 px/%，page 类型无效） | String  | "500px"   |
-| botBtn     | 底部按钮配置                     | Array   | []:BotBtn |
-
-#### BotBtn 底部按钮配置
-
-| 参数  | 说明     | 类型   | 默认值 | 示例      |
-| ----- | -------- | ------ | ------ | --------- |
-| key   | 按钮 key | String | -      | "confirm" |
-| label | 按钮文本 | String | -      | "确定"    |
-| type  | 按钮类型 | String | -      | "primary" |
-
-### Events
-
-| 事件名      | 说明             | 回调参数             |
-| ----------- | ---------------- | -------------------- |
-| botBtnClick | 底部按钮点击事件 | ' { btn: 按钮 key }' |
+| 参数       | 说明                             | 类型    | 默认值  |
+| ---------- | -------------------------------- | ------- | ------- |
+| type       | 类型：box/drawer/page            | String  | "box"   |
+| modelValue | 显示/隐藏状态                    | Boolean | false   |
+| title      | 对话框标题                       | String  | ""      |
+| width      | 宽度（支持 px/%，page 类型无效） | String  | "500px" |
 
 ### Slots
 
@@ -341,6 +306,7 @@ type 支持的输入类型：
 | ------- | ---------------------------- |
 | default | 对话框主体内容               |
 | header  | 页头区域右侧（仅 page 类型） |
+| footer  | 页脚区域                     |
 
 ### 使用示例
 
@@ -385,18 +351,18 @@ type 支持的输入类型：
 
 ### Props
 
-| 参数 | 说明     | 类型          | 默认值 | 示例  |
-| ---- | -------- | ------------- | ------ | ----- |
-| size | 布局大小 | String/Number | "220"  | "220" |
-| min  | 最小宽度 | String/Number | "100"  | "100" |
-| max  | 最大宽度 | String/Number | "380"  | "380" |
+| 参数 | 说明              | 类型          | 默认值 | 示例  |
+| ---- | ----------------- | ------------- | ------ | ----- |
+| size | 首栏宽度/高度     | String/Number | "220"  | "220" |
+| min  | 首栏最小宽度/高度 | String/Number | "100"  | "100" |
+| max  | 首栏最大宽度/高度 | String/Number | "380"  | "380" |
 
 ### Slots
 
-| 名称  | 说明     |
-| ----- | -------- |
-| plan1 | 左侧内容 |
-| plan2 | 右侧内容 |
+| 名称  | 说明          |
+| ----- | ------------- |
+| plan1 | 左侧/顶部内容 |
+| plan2 | 右侧/底部内容 |
 
 ### 使用示例
 

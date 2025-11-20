@@ -7,6 +7,7 @@
 ```
 ├── .husky                      # git hooks配置
 ├── apps                        # 子应用
+│ ├── app-common                # 公共子应用模块
 │ ├── example                   # 示例应用
 │ ├── system                    # 系统应用
 │ ├── equipment                 # 设备应用（外部子应用）
