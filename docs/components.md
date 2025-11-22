@@ -4,6 +4,7 @@
 
 - [p-title 标题组件](#p-title-标题组件)
 - [p-icon 图标组件](#p-icon-图标组件)
+- [p-button 按钮组件](#p-button-按钮组件)
 - [p-item 基础项组件](#p-item-基础项组件)
 - [p-form 表单组件](#p-form-表单组件)
 - [p-searh 搜索组件](#p-searh-搜索组件)
@@ -128,6 +129,25 @@ type 支持的输入类型：
 
 ```vue
 <p-item v-model="form.name" :config="{ type: 'input', label: '用户名' }" />
+```
+
+## p-button 按钮组件
+
+### 功能说明
+
+按钮组件，同 Element plus 按钮组件并支持 auth 权限控制
+
+### Props
+
+| 参数 | 说明                        | 类型   | 默认值 | 示例            |
+| ---- | --------------------------- | ------ | ------ | --------------- |
+| auth | 按钮权限名称                | String | -      | "orderPage_add" |
+| ...  | Element plus 按钮组件 Props | -      | -      | -               |
+
+### 使用示例
+
+```vue
+<p-button type="primary" auth="orderPage_add">添加订单</p-button>
 ```
 
 ## p-form 表单组件
