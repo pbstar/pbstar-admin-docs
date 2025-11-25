@@ -91,16 +91,13 @@ import { PTitle, PIcon } from "@Pcomponents";
 | ----------- | -------------- | ------- | ------ | ------------------------ |
 | key         | 字段名         | String  | -      | "name"                   |
 | label       | 标签文本       | String  | -      | "用户名"                 |
-| labelStyle  | 标签样式       | Object  | -      | {}                       |
 | type        | 输入类型       | String  | -      | "input"                  |
-| options     | 选项列表       | Array   | []     | [{label:'男',value:'1'}] |
 | placeholder | 提示文字       | String  | -      | "请输入"                 |
 | isText      | 文本展示       | Boolean | false  | false                    |
 | isRequired  | 必填标识       | Boolean | false  | false                    |
 | isDisabled  | 禁用标识       | Boolean | false  | false                    |
+| options     | 选项列表       | Array   | []     | [{label:'男',value:'1'}] |
 | enumKey     | 枚举类型       | String  | -      | "gender"                 |
-| tipText     | 提示文字       | String  | -      | "用户名请输入真实姓名"   |
-| rightText   | 右侧文字       | String  | -      | "元"                     |
 | more        | 动态绑定的属性 | Object  | {}     | {}                       |
 
 type 支持的输入类型：
@@ -125,6 +122,14 @@ type 支持的输入类型：
 | ------ | ---------- | ----------------------- |
 | change | 值变化事件 | '{ key?, value, row? }' |
 
+### Slots
+
+| 名称    | 说明           |
+| ------- | -------------- |
+| default | 自定义插槽     |
+| right   | 自定义右侧插槽 |
+| bottom  | 自定义底部插槽 |
+
 ### 使用示例
 
 ```vue
@@ -135,19 +140,19 @@ type 支持的输入类型：
 
 ### 功能说明
 
-按钮组件，同 Element plus 按钮组件并支持 auth 权限控制
+按钮组件，同 Element plus 按钮组件并支持 btnkey 权限控制
 
 ### Props
 
-| 参数 | 说明                        | 类型   | 默认值 | 示例            |
-| ---- | --------------------------- | ------ | ------ | --------------- |
-| auth | 按钮权限名称                | String | -      | "orderPage_add" |
-| ...  | Element plus 按钮组件 Props | -      | -      | -               |
+| 参数   | 说明                        | 类型   | 默认值 | 示例            |
+| ------ | --------------------------- | ------ | ------ | --------------- |
+| btnkey | 按钮权限名称                | String | -      | "orderPage_add" |
+| ...    | Element plus 按钮组件 Props | -      | -      | -               |
 
 ### 使用示例
 
 ```vue
-<p-button type="primary" auth="orderPage_add">添加订单</p-button>
+<p-button type="primary" btnkey="orderPage_add">添加订单</p-button>
 ```
 
 ## p-form 表单组件
@@ -232,33 +237,17 @@ type 支持的输入类型：
 
 ### 功能说明
 
-增强型表格组件，支持分页、列配置、操作按钮等功能
+增强型表格组件，支持分页等功能
 
 ### Props
 
 | 参数          | 说明         | 类型          | 默认值 | 示例          |
 | ------------- | ------------ | ------------- | ------ | ------------- |
 | data          | 表格数据     | Array         | []     | []            |
-| column        | 列配置       | Array         | []     | []:Column     |
-| tableKey      | 表格唯一键   | String        | ""     | "orderTable"  |
 | showSelection | 显示多选框   | Boolean       | false  | false         |
 | showIndex     | 显示序号列   | Boolean       | true   | true          |
-| showSetting   | 显示设置列   | Boolean       | false  | false         |
 | maxHeight     | 表格最大高度 | Number/String | 800    | 800           |
 | pagination    | 分页配置     | Object        | {}     | {}:Pagination |
-| export        | 导出方法     | Function/null | null   | Fun:Export    |
-
-#### Column 列配置
-
-| 参数     | 说明             | 类型   | 默认值 | 示例                     |
-| -------- | ---------------- | ------ | ------ | ------------------------ |
-| key      | 字段名           | String | -      | "name"                   |
-| label    | 列标题           | String | -      | "姓名"                   |
-| width    | 列宽度           | String | -      | "100px"                  |
-| minWidth | 列最小宽度       | String | -      | "50px"                   |
-| enumKey  | 枚举类型         | String | -      | "gender"                 |
-| options  | 选项列表         | Array  | []     | [{label:'男',value:'1'}] |
-| slot     | 自定义列的插槽名 | String | -      | "name"                   |
 
 #### Pagination 分页配置
 
@@ -267,14 +256,6 @@ type 支持的输入类型：
 | pageNumber | 页码     | Number | 1      | 1    |
 | pageSize   | 每页条数 | Number | 10     | 10   |
 | total      | 总条数   | Number | 0      | 0    |
-
-#### Export 导出方法配置
-
-```javascript
-(callBack) => {
-  callBack({ fileName: "用户列表", data: [] });
-};
-```
 
 ### Events
 
@@ -285,24 +266,17 @@ type 支持的输入类型：
 
 ### Slots
 
-| 名称      | 说明           | 回调参数  |
-| --------- | -------------- | --------- |
-| topLeft   | 表格左上角区域 | -         |
-| topRight  | 表格右上角区域 | -         |
-| operation | 操作列         | '{ row }' |
-| botLeft   | 表格左下角区域 | -         |
-| {key}     | 自定义列       | '{ row }' |
-
-### Exposes
-
-| 方法名         | 说明                   | 参数      | 返回值 |
-| -------------- | ---------------------- | --------- | ------ |
-| toChangeColumn | 修改 column 配置项数据 | []:Column | -      |
+| 名称     | 说明           | 回调参数 |
+| -------- | -------------- | -------- |
+| topLeft  | 表格左上角区域 | -        |
+| topRight | 表格右上角区域 | -        |
+| column   | 操作列         | -        |
+| botLeft  | 表格左下角区域 | -        |
 
 ### 使用示例
 
 ```vue
-<p-table :data="tableData" :column="columns" />
+<p-table :data="tableData" />
 ```
 
 ## p-dialog 对话框组件
