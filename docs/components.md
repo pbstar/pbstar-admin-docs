@@ -6,7 +6,6 @@
 - [p-icon 图标组件](#p-icon-图标组件)
 - [p-button 按钮组件](#p-button-按钮组件)
 - [p-item 基础项组件](#p-item-基础项组件)
-- [p-form 表单组件](#p-form-表单组件)
 - [p-searh 搜索组件](#p-searh-搜索组件)
 - [p-table 表格组件](#p-table-表格组件)
 - [p-dialog 对话框组件](#p-dialog-对话框组件)
@@ -155,45 +154,6 @@ type 支持的输入类型：
 <p-button type="primary" btnkey="orderPage_add">添加订单</p-button>
 ```
 
-## p-form 表单组件
-
-### 功能说明
-
-表单组件，支持动态表单配置
-
-### Props
-
-| 参数       | 说明                      | 类型   | 默认值     | 示例            |
-| ---------- | ------------------------- | ------ | ---------- | --------------- |
-| data       | 表单项配置                | Array  | []         | []:PItem.Config |
-| spanList   | 栅格配置（占满整行为 12） | Array  | [6,6,6...] | []:Number       |
-| modelValue | 双向绑定值                | Object | {}         | {name:'表单值'} |
-
-### Events
-
-| 事件名 | 说明       | 回调参数                |
-| ------ | ---------- | ----------------------- |
-| change | 值变化事件 | '{ key?, value, row? }' |
-
-### Slots
-
-| 名称  | 说明                                           |
-| ----- | ---------------------------------------------- |
-| {key} | 自定义搜索项（需要 PItem.Config.type 为 slot） |
-
-### Exposes
-
-| 方法名          | 说明                 | 参数            | 返回值  |
-| --------------- | -------------------- | --------------- | ------- |
-| toChangeData    | 修改 data 配置项数据 | []:PItem.Config | -       |
-| toCheckRequired | 检查必填项           | -               | Boolean |
-
-### 使用示例
-
-```vue
-<p-form :data="formItems" :spanList="spanList" />
-```
-
 ## p-search 搜索组件
 
 ### 功能说明
@@ -202,35 +162,27 @@ type 支持的输入类型：
 
 ### Props
 
-| 参数       | 说明             | 类型    | 默认值 | 示例            |
-| ---------- | ---------------- | ------- | ------ | --------------- |
-| data       | 搜索项配置       | Array   | []     | []:PItem.Config |
-| modelValue | 双向绑定值       | Object  | {}     | {name:'表单值'} |
-| showReset  | 是否显示重置按钮 | Boolean | true   | true            |
+| 参数      | 说明             | 类型    | 默认值 | 示例 |
+| --------- | ---------------- | ------- | ------ | ---- |
+| showReset | 是否显示重置按钮 | Boolean | true   | true |
 
 ### Events
 
-| 事件名   | 说明         | 回调参数                |
-| -------- | ------------ | ----------------------- |
-| change   | 值变化事件   | '{ key?, value, row? }' |
-| btnClick | 按钮点击事件 | '{ type,data }'         |
+| 事件名 | 说明             | 回调参数 |
+| ------ | ---------------- | -------- |
+| search | 搜索按钮点击事件 | -        |
+| reset  | 重置按钮点击事件 | -        |
 
 ### Slots
 
-| 名称  | 说明                                           |
-| ----- | ---------------------------------------------- |
-| {key} | 自定义搜索项（需要 PItem.Config.type 为 slot） |
-
-### Exposes
-
-| 方法名       | 说明                 | 参数            | 返回值 |
-| ------------ | -------------------- | --------------- | ------ |
-| toChangeData | 修改 data 配置项数据 | []:PItem.Config | -      |
+| 名称    | 说明             |
+| ------- | ---------------- |
+| default | 自定义搜索项插槽 |
 
 ### 使用示例
 
 ```vue
-<p-search :data="searchItems" @btnClick="handleSearch" />
+<p-search @search="handleSearch" @reset="handleReset" />
 ```
 
 ## p-table 表格组件
