@@ -15,12 +15,6 @@
 
 - [p-twinBox 双栏布局组件](#p-twinBox-双栏布局组件)
 
-**引入方式**
-
-```javascript
-import { PTitle, PIcon } from "@Pcomponents";
-```
-
 ## p-title 标题组件
 
 ### 功能说明
@@ -47,6 +41,10 @@ import { PTitle, PIcon } from "@Pcomponents";
 
 ### 使用示例
 
+```javascript
+import { pTitle } from "@Pcomponents";
+```
+
 ```vue
 <p-title :list="['订单', '物流']" @change="handleTitleChange" />
 ```
@@ -67,6 +65,10 @@ import { PTitle, PIcon } from "@Pcomponents";
 
 ### 使用示例
 
+```javascript
+import { pIcon } from "@Pcomponents";
+```
+
 ```vue
 <p-icon name="el-icon-edit" size="24" color="#ff0000" />
 ```
@@ -75,64 +77,54 @@ import { PTitle, PIcon } from "@Pcomponents";
 
 ### 功能说明
 
-通用表单项组件，支持多种输入类型和选项配置
+基础表单项布局组件,提供标签和内容的统一布局,支持插槽自定义内容
 
 ### Props
 
-| 参数       | 说明       | 类型   | 默认值 | 示例      |
-| ---------- | ---------- | ------ | ------ | --------- |
-| config     | 表单项配置 | Object | {}     | {}:Config |
-| modelValue | 双向绑定值 | Any    | -      | -         |
-
-#### Config 配置项
-
-| 参数        | 说明           | 类型    | 默认值 | 示例                     |
-| ----------- | -------------- | ------- | ------ | ------------------------ |
-| key         | 字段名         | String  | -      | "name"                   |
-| label       | 标签文本       | String  | -      | "用户名"                 |
-| type        | 输入类型       | String  | -      | "input"                  |
-| placeholder | 提示文字       | String  | -      | "请输入"                 |
-| isText      | 文本展示       | Boolean | false  | false                    |
-| isRequired  | 必填标识       | Boolean | false  | false                    |
-| isDisabled  | 禁用标识       | Boolean | false  | false                    |
-| options     | 选项列表       | Array   | []     | [{label:'男',value:'1'}] |
-| enumKey     | 枚举类型       | String  | -      | "gender"                 |
-| more        | 动态绑定的属性 | Object  | {}     | {}                       |
-
-type 支持的输入类型：
-
-- slot：插槽
-- input：文本输入框
-- textarea：多行文本输入框
-- inputNumber：数字输入框
-- select：下拉选择框
-- selectMultiple：多选下拉选择框
-- radio：单选框
-- checkbox：多选框
-- date：日期选择器
-- daterange：日期范围选择器
-- time：时间选择器
-- datetime：日期时间选择器
-- datetimerange：日期时间范围选择器
-
-### Events
-
-| 事件名 | 说明       | 回调参数                |
-| ------ | ---------- | ----------------------- |
-| change | 值变化事件 | '{ key?, value, row? }' |
+| 参数       | 说明           | 类型          | 默认值 | 示例     |
+| ---------- | -------------- | ------------- | ------ | -------- |
+| label      | 标签文本       | String        | ""     | "用户名" |
+| showText   | 是否为文本展示 | Boolean       | false  | true     |
+| text       | 文本内容       | String/Number | ""     | "张三"   |
+| isRequired | 是否必填       | Boolean       | false  | true     |
+| isTextWrap | 文本是否换行   | Boolean       | false  | true     |
 
 ### Slots
 
-| 名称    | 说明           |
-| ------- | -------------- |
-| default | 自定义插槽     |
-| right   | 自定义右侧插槽 |
-| bottom  | 自定义底部插槽 |
+| 名称    | 说明         |
+| ------- | ------------ |
+| default | 主内容区域   |
+| right   | 右侧区域     |
+| bottom  | 底部提示区域 |
 
 ### 使用示例
 
+```javascript
+import { pItem } from "@Pcomponents";
+```
+
 ```vue
-<p-item v-model="form.name" :config="{ type: 'input', label: '用户名' }" />
+<!-- 表单输入模式 -->
+<p-item label="用户名" :isRequired="true">
+  <el-input v-model="form.name" placeholder="请输入用户名" />
+</p-item>
+
+<!-- 文本展示模式 -->
+<p-item label="用户名" :showText="true" text="张三" />
+
+<!-- 带右侧插槽 -->
+<p-item label="金额">
+  <el-input v-model="form.amount" />
+  <template #right>元</template>
+</p-item>
+
+<!-- 带底部提示 -->
+<p-item label="密码">
+  <el-input type="password" v-model="form.password" />
+  <template #bottom>
+    <span style="color: #999; font-size: 12px">密码长度为6-20位</span>
+  </template>
+</p-item>
 ```
 
 ## p-button 按钮组件
@@ -149,6 +141,10 @@ type 支持的输入类型：
 | ...    | Element plus 按钮组件 Props | -      | -      | -               |
 
 ### 使用示例
+
+```javascript
+import { pButton } from "@Pcomponents";
+```
 
 ```vue
 <p-button type="primary" btnkey="orderPage_add">添加订单</p-button>
@@ -181,8 +177,16 @@ type 支持的输入类型：
 
 ### 使用示例
 
+```javascript
+import { pSearch } from "@Pcomponents";
+```
+
 ```vue
-<p-search @search="handleSearch" @reset="handleReset" />
+<p-search @search="toSearch" @reset="toReset">
+  <p-item class="item" label="姓名">
+    <el-input v-model="searchValue.name" placeholder="请输入姓名" />
+  </p-item>
+</p-search>
 ```
 
 ## p-table 表格组件
@@ -227,37 +231,99 @@ type 支持的输入类型：
 
 ### 使用示例
 
+```javascript
+import { pTable } from "@Pcomponents";
+```
+
 ```vue
-<p-table :data="tableData" />
+<p-table
+  :data="data"
+  :pagination="pagination"
+  @paginationChange="toPageChange"
+>
+  <template #column>
+    <el-table-column prop="name" label="姓名" />
+    <el-table-column prop="age" label="年龄">
+      <template #default="{ row }">
+        <span v-show="row.age < 25">{{ row.age }}</span>
+        <span v-show="row.age >= 25">{{ row.age }}（老年人）</span>
+      </template>
+    </el-table-column>
+    <el-table-column
+      prop="operation"
+      label="操作"
+      fixed="right"
+      width="200"
+    >
+      <template #default="{ row }">
+        <p-button type="primary" size="small" link @click="handleView(row)">
+          查看
+        </p-button>
+        <p-button type="primary" size="small" link @click="handleEdit(row)">
+          编辑
+        </p-button>
+      </template>
+    </el-table-column>
+  </template>
+  <template #topLeft>
+    <p-button type="primary" @click="handleAdd()"> 新增 </p-button>
+  </template>
+</p-table>
 ```
 
 ## p-dialog 对话框组件
 
 ### 功能说明
 
-支持三种形态的对话框组件（弹窗/抽屉/全屏页面）
+支持两种形态的对话框组件(弹窗/抽屉),内置全屏切换功能
 
 ### Props
 
-| 参数       | 说明                             | 类型    | 默认值  |
-| ---------- | -------------------------------- | ------- | ------- |
-| type       | 类型：box/drawer/page            | String  | "box"   |
-| modelValue | 显示/隐藏状态                    | Boolean | false   |
-| title      | 对话框标题                       | String  | ""      |
-| width      | 宽度（支持 px/%，page 类型无效） | String  | "500px" |
+| 参数       | 说明                                       | 类型    | 默认值 | 示例       |
+| ---------- | ------------------------------------------ | ------- | ------ | ---------- |
+| type       | 类型:box(弹窗)/drawer(抽屉)                | String  | "box"  | "drawer"   |
+| modelValue | 显示/隐藏状态                              | Boolean | false  | true       |
+| title      | 对话框标题                                 | String  | ""     | "用户信息" |
+| width      | 宽度(box 类型默认 500px,drawer 默认 400px) | String  | ""     | "600px"    |
+
+### Events
+
+| 事件名            | 说明         | 回调参数 |
+| ----------------- | ------------ | -------- |
+| update:modelValue | 显示状态变化 | Boolean  |
 
 ### Slots
 
-| 名称    | 说明                         |
-| ------- | ---------------------------- |
-| default | 对话框主体内容               |
-| header  | 页头区域右侧（仅 page 类型） |
-| footer  | 页脚区域                     |
+| 名称    | 说明           |
+| ------- | -------------- |
+| default | 对话框主体内容 |
+| footer  | 页脚区域       |
 
 ### 使用示例
 
+```javascript
+import { pDialog } from "@Pcomponents";
+```
+
 ```vue
-<p-dialog type="drawer" title="编辑信息" v-model="showDialog"></p-dialog>
+<p-dialog
+  title="用户列表详情页"
+  type="drawer"
+  width="1000px"
+  v-model="isDetail"
+>
+  <Detail ref="detailRef" :type="detailType" :id="detailId"></Detail>
+  <template #footer>
+    <p-button
+      type="primary"
+      @click="handleSave()"
+      v-if="detailType !== 'view'"
+    >
+      保存
+    </p-button>
+    <p-button @click="handleBack()"> 返回 </p-button>
+  </template>
+</p-dialog>
 ```
 
 ## p-collapse 折叠组件
@@ -282,6 +348,10 @@ type 支持的输入类型：
 | default | 折叠面板内容区域 |
 
 ### 使用示例
+
+```javascript
+import { pCollapse } from "@Pcomponents";
+```
 
 ```vue
 <p-collapse title="详细信息">
@@ -311,6 +381,10 @@ type 支持的输入类型：
 | plan2 | 右侧/底部内容 |
 
 ### 使用示例
+
+```javascript
+import { pTwinBox } from "@Pcomponents";
+```
 
 ```vue
 <p-twinBox>

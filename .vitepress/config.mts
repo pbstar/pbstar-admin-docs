@@ -12,7 +12,7 @@ export default defineConfig({
       { text: "文档", link: "/docs/what" },
       { text: "在线演示", link: "http://pbstar-admin.pbstar.cn/" },
       {
-        text: "V0.3.0",
+        text: "V0.4.0",
         items: [
           {
             text: "更新日志",
